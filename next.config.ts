@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: "/FlowForgeAI",
   assetPrefix: "/FlowForgeAI/",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
