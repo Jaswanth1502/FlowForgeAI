@@ -18,11 +18,15 @@ export default function FrameSequenceBackground() {
     let isCancelled = false;
     const images: HTMLImageElement[] = [];
 
+    const prefix = typeof window !== "undefined" && window.location.pathname.startsWith("/FlowForgeAI")
+      ? "/FlowForgeAI"
+      : "";
+
     // Preload and cache all 240 sequential frames
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const frameNum = String(i).padStart(FRAME_PAD, "0");
-      img.src = `/bg-frames/ezgif-frame-${frameNum}.jpg`;
+      img.src = `${prefix}/bg-frames/ezgif-frame-${frameNum}.jpg`;
 
       // When the first frame is ready, trigger immediate first render
       if (i === 1) {
@@ -55,6 +59,9 @@ export default function FrameSequenceBackground() {
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
+
+      ctx.fillStyle = "#0f172a";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
