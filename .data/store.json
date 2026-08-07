@@ -1,0 +1,571 @@
+{
+  "users": [
+    {
+      "id": "06b3a1c6-6b8c-45eb-8843-250c39b1a227",
+      "email": "surya@example.com",
+      "name": "Jaswanth Surya",
+      "passwordHash": "$2b$12$y2ixfFUVLc5vk9ZFIIkxSOTOXuu9otuuXfU67tBa2.LmHIloxFUIC",
+      "createdAt": "2026-08-07T11:09:48.174Z",
+      "updatedAt": "2026-08-07T11:09:48.174Z"
+    },
+    {
+      "id": "2de62a6e-2c11-44b0-826c-fb151499b813",
+      "userId": "06b3a1c6-6b8c-45eb-8843-250c39b1a227",
+      "token": "0b9e378d-7845-45f6-94ad-9e1a39eb7268",
+      "expiresAt": "2026-08-14T11:09:48.174Z",
+      "createdAt": "2026-08-07T11:09:48.174Z",
+      "updatedAt": "2026-08-07T11:09:48.174Z"
+    },
+    {
+      "id": "3336ad23-2de6-4670-8230-696c066c1d40",
+      "userId": "06b3a1c6-6b8c-45eb-8843-250c39b1a227",
+      "token": "a7eadf0a-cde5-45a8-963b-831c63e24893",
+      "expiresAt": "2026-08-14T11:09:55.137Z",
+      "createdAt": "2026-08-07T11:09:55.138Z",
+      "updatedAt": "2026-08-07T11:09:55.138Z"
+    },
+    {
+      "id": "f072b63a-0408-4cb5-8935-b455c4f0c8fc",
+      "email": "demo@example.com",
+      "name": "Demo User",
+      "passwordHash": "$2b$12$WjkRIz8IRFcFo0F/CeFF3.oN4qEE2PCeZEV9GUaFHFzt1MiONBrda",
+      "createdAt": "2026-08-07T11:11:14.432Z"
+    },
+    {
+      "id": "7e9d2782-9cb6-46c7-99fb-a9002d954d2f",
+      "email": "testuser@example.com",
+      "name": "Test User",
+      "passwordHash": "$2b$12$76303RHRYl5dxHr65xh8u.ZtULbuncn2.csBscpCuuOQC.nH0tiFm",
+      "createdAt": "2026-08-07T11:14:05.434Z"
+    },
+    {
+      "id": "11a7d17a-b92e-4414-96fc-8448a2e97c59",
+      "email": "jaswanthsurya1502@gmail.com",
+      "name": "jaswanth",
+      "passwordHash": "$2b$12$iJh2AvhLq70BsI.XEw6V7OMGslB35AZtV7YdKPixAjmlWAdIFKas2",
+      "createdAt": "2026-08-07T11:14:50.965Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "6a9f905f-4bfc-42f5-82bd-12094f60b30f",
+      "userId": "f072b63a-0408-4cb5-8935-b455c4f0c8fc",
+      "token": "16f00750-d64a-4f6a-b5a1-74824150d651",
+      "createdAt": "2026-08-07T11:11:14.433Z",
+      "expiresAt": "2026-08-14T11:11:14.433Z"
+    },
+    {
+      "id": "5add099d-91a3-4abb-8588-4669f25441be",
+      "userId": "f072b63a-0408-4cb5-8935-b455c4f0c8fc",
+      "token": "16d4c0dd-001b-49cd-8281-eafc42218127",
+      "createdAt": "2026-08-07T11:11:21.082Z",
+      "expiresAt": "2026-08-14T11:11:21.082Z"
+    },
+    {
+      "id": "49a47d52-e30e-44dc-ba60-32fbf2509ae4",
+      "userId": "7e9d2782-9cb6-46c7-99fb-a9002d954d2f",
+      "token": "4450d90b-9f46-426a-9bbb-f9fc064d1c62",
+      "createdAt": "2026-08-07T11:14:05.434Z",
+      "expiresAt": "2026-08-14T11:14:05.434Z"
+    },
+    {
+      "id": "d40d49fe-04ae-4059-8b4d-b540bdf24238",
+      "userId": "google-user-001",
+      "token": "34846ccb-8c0f-4357-b25c-bff6e085b2c0",
+      "createdAt": "2026-08-07T17:55:58.797Z",
+      "expiresAt": "2026-08-14T17:55:58.796Z"
+    },
+    {
+      "id": "e961acd3-1725-4a96-b735-f44b8702563e",
+      "userId": "demo-user-001",
+      "token": "70afd8cf-aa83-4b5e-b6a2-db5d13e70b66",
+      "createdAt": "2026-08-07T18:12:08.125Z",
+      "expiresAt": "2026-08-14T18:12:08.125Z"
+    },
+    {
+      "id": "c50774a8-2dc1-4ed4-976c-ca0d0147f077",
+      "userId": "demo-user-001",
+      "token": "625cf0e9-0f1b-4728-942e-a6dfb2f3fed7",
+      "createdAt": "2026-08-07T18:51:58.502Z",
+      "expiresAt": "2026-08-14T18:51:58.501Z"
+    },
+    {
+      "id": "3b5615e7-bf65-4ba1-99ac-2ffec21cffec",
+      "userId": "demo-user-001",
+      "token": "9e8e70d3-93ed-4da0-8872-5a733eff5fb1",
+      "createdAt": "2026-08-07T18:55:28.214Z",
+      "expiresAt": "2026-08-14T18:55:28.214Z"
+    },
+    {
+      "id": "a2e86afa-75b1-435b-8177-e47cc1e42e46",
+      "userId": "demo-user-001",
+      "token": "30d1a7f8-5acf-49d0-b885-75f8d5fe51b4",
+      "createdAt": "2026-08-07T18:55:51.518Z",
+      "expiresAt": "2026-08-14T18:55:51.517Z"
+    },
+    {
+      "id": "25c95acc-7c62-432a-9787-7d76d925d6b3",
+      "userId": "demo-user-001",
+      "token": "ee841c15-9cdb-41fb-ad6b-3f7d6b006b94",
+      "createdAt": "2026-08-07T18:58:33.067Z",
+      "expiresAt": "2026-08-14T18:58:33.066Z"
+    },
+    {
+      "id": "7a09a544-a257-464b-a8bd-d925c02d8f8b",
+      "userId": "demo-user-001",
+      "token": "4ac43e91-c44d-4a03-80e6-4895324d0348",
+      "createdAt": "2026-08-07T19:03:16.817Z",
+      "expiresAt": "2026-08-14T19:03:16.817Z"
+    },
+    {
+      "id": "c569e2fe-6a76-4e35-9aa4-c5c1c0830d39",
+      "userId": "demo-user-001",
+      "token": "9d192e7d-d04b-4097-b407-8a49281bb941",
+      "createdAt": "2026-08-07T19:05:38.827Z",
+      "expiresAt": "2026-08-14T19:05:38.826Z"
+    },
+    {
+      "id": "69984f4a-df4e-41ee-97e3-227dae1d1471",
+      "userId": "demo-user-001",
+      "token": "e0249945-538c-4b3b-875f-cf484aa2289b",
+      "createdAt": "2026-08-07T19:09:41.283Z",
+      "expiresAt": "2026-08-14T19:09:41.283Z"
+    },
+    {
+      "id": "c80dea76-99bd-48f6-b80e-f5d785d7d982",
+      "userId": "demo-user-001",
+      "token": "4f3092f7-7646-4f3c-b1a0-8608aa5c64fd",
+      "createdAt": "2026-08-07T19:17:12.916Z",
+      "expiresAt": "2026-08-14T19:17:12.915Z"
+    },
+    {
+      "id": "90ede744-e68d-4c29-a98e-c6011c802cd3",
+      "userId": "google-user-001",
+      "token": "858112c7-aac7-48d9-9695-2d652835ab0e",
+      "createdAt": "2026-08-07T19:23:44.213Z",
+      "expiresAt": "2026-08-14T19:23:44.212Z"
+    },
+    {
+      "id": "a1c90618-4c12-4157-98bb-14661bb5b06c",
+      "userId": "demo-user-001",
+      "token": "d1feb7cd-edb4-46e4-b367-6997188d6f12",
+      "createdAt": "2026-08-07T20:19:47.425Z",
+      "expiresAt": "2026-08-14T20:19:47.425Z"
+    },
+    {
+      "id": "9214d39a-b9f5-4c5c-8f9b-89a67154f3de",
+      "userId": "demo-user-001",
+      "token": "b33513a8-c00b-4e15-863c-88dfaba09665",
+      "createdAt": "2026-08-07T20:48:13.427Z",
+      "expiresAt": "2026-08-14T20:48:13.426Z"
+    },
+    {
+      "id": "6e10cc46-7a95-4bb2-9cb0-20ef13f5ed0e",
+      "userId": "demo-user-001",
+      "token": "f5595183-1fa5-4c16-af76-14775839bb94",
+      "createdAt": "2026-08-07T20:54:11.121Z",
+      "expiresAt": "2026-08-14T20:54:11.120Z"
+    },
+    {
+      "id": "3bbe6e3a-86bf-48fa-b0ce-ee4abf1edafd",
+      "userId": "demo-user-001",
+      "token": "3636f298-ec16-4a7d-991b-b9a216853439",
+      "createdAt": "2026-08-07T21:11:39.268Z",
+      "expiresAt": "2026-08-14T21:11:39.268Z"
+    },
+    {
+      "id": "885a43c1-7dc5-485e-800d-61ceeb6a7b58",
+      "userId": "demo-user-001",
+      "token": "4bac917c-3581-42b9-bcd6-7bd6286fb1c4",
+      "createdAt": "2026-08-07T21:12:52.503Z",
+      "expiresAt": "2026-08-14T21:12:52.503Z"
+    },
+    {
+      "id": "91719e0c-5e38-42da-b5f1-25c716d27588",
+      "userId": "demo-user-001",
+      "token": "4abeefa2-fd73-4017-863a-71b172e16e9b",
+      "createdAt": "2026-08-07T21:23:04.435Z",
+      "expiresAt": "2026-08-14T21:23:04.435Z"
+    },
+    {
+      "id": "304b7f9f-02a1-4b86-80e9-7eb5d7a5eea6",
+      "userId": "demo-user-001",
+      "token": "5f66338d-9c00-4909-8128-642d01032f8f",
+      "createdAt": "2026-08-07T21:30:33.095Z",
+      "expiresAt": "2026-08-14T21:30:33.094Z"
+    },
+    {
+      "id": "40cdbd46-d4ec-4b73-883c-d0440622179b",
+      "userId": "demo-user-001",
+      "token": "7d065121-9067-4545-b622-f5bc516d863b",
+      "createdAt": "2026-08-07T21:36:11.188Z",
+      "expiresAt": "2026-08-14T21:36:11.187Z"
+    },
+    {
+      "id": "d9500ed2-141a-45d3-8a70-b4a29893e456",
+      "userId": "demo-user-001",
+      "token": "bb17197c-dc36-4ee5-bc8c-a4f81751e165",
+      "createdAt": "2026-08-07T21:40:27.592Z",
+      "expiresAt": "2026-08-14T21:40:27.591Z"
+    },
+    {
+      "id": "efb782dc-4233-4aa4-9c07-5c64847286c0",
+      "userId": "demo-user-001",
+      "token": "886aff06-1c61-4ccb-ab57-bc3fb08b888c",
+      "createdAt": "2026-08-07T21:53:24.392Z",
+      "expiresAt": "2026-08-14T21:53:24.391Z"
+    },
+    {
+      "id": "a6f37b42-b81b-49f7-ba64-3bc782ffc8c2",
+      "userId": "demo-user-001",
+      "token": "bf4b490d-99c1-4711-b906-0fe047c3e724",
+      "createdAt": "2026-08-07T21:55:15.596Z",
+      "expiresAt": "2026-08-14T21:55:15.596Z"
+    },
+    {
+      "id": "e0426aed-42f9-407a-876d-8fcaf8901b70",
+      "userId": "demo-user-001",
+      "token": "a756bb7b-418d-4b5d-8946-255414758bf4",
+      "createdAt": "2026-08-07T22:03:18.047Z",
+      "expiresAt": "2026-08-14T22:03:18.046Z"
+    },
+    {
+      "id": "be93c817-60db-4bf4-945d-ae6616ab7cb0",
+      "userId": "demo-user-001",
+      "token": "c301853c-09cb-487b-8d87-32b020e27abd",
+      "createdAt": "2026-08-07T22:19:31.308Z",
+      "expiresAt": "2026-08-14T22:19:31.307Z"
+    },
+    {
+      "id": "7ebea70d-2617-4cdb-8e3a-28414698a6f1",
+      "userId": "demo-user-001",
+      "token": "f53d5df6-05d7-4c06-b62f-78a4aa671078",
+      "createdAt": "2026-08-07T22:36:56.321Z",
+      "expiresAt": "2026-08-14T22:36:56.320Z"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "81985a5c-ab11-4db9-a331-dd4499286ffc",
+      "userId": "06b3a1c6-6b8c-45eb-8843-250c39b1a227",
+      "title": "Student & Academic Portfolio",
+      "description": "Academic background, research coursework, technical projects, publications, and education milestones",
+      "prompt": "create a student portfolio",
+      "uiSchema": {
+        "title": "Student & Academic Portfolio",
+        "description": "Academic background, research coursework, technical projects, publications, and education milestones",
+        "components": [
+          {
+            "type": "hero",
+            "title": "Computer Science & Engineering Scholar",
+            "subtitle": "Undergraduate researcher focused on algorithms, distributed computing, and machine learning systems.",
+            "actionText": "View Research Projects",
+            "icon": "🎓"
+          },
+          {
+            "type": "card",
+            "title": "Academic Background & Research Focus",
+            "content": "Dedicated student passionate about computer systems, artificial intelligence, and applied software engineering. Actively seeking internship opportunities and collaborative research initiatives.",
+            "icon": "📚"
+          },
+          {
+            "type": "progress",
+            "title": "Degree Progress & Core Academic Competencies",
+            "value": 88,
+            "label": "Data Structures, Systems Programming, Machine Learning & Algorithms"
+          },
+          {
+            "type": "grid",
+            "title": "Featured Academic & Capstone Projects",
+            "items": [
+              {
+                "title": "Distributed Consensus Simulator",
+                "description": "Raft consensus implementation with dynamic network partition visualization.",
+                "tags": [
+                  "Go",
+                  "Distributed Systems",
+                  "Academic"
+                ]
+              },
+              {
+                "title": "Neural Vision Classifier",
+                "description": "Lightweight convolutional model for real-time biomedical image segmentation.",
+                "tags": [
+                  "Python",
+                  "PyTorch",
+                  "Research"
+                ]
+              },
+              {
+                "title": "FlowForge UI Engine",
+                "description": "Declarative component layout renderer and domain schema compiler.",
+                "tags": [
+                  "TypeScript",
+                  "Next.js",
+                  "Open Source"
+                ]
+              },
+              {
+                "title": "Database Query Optimizer",
+                "description": "Cost-based B-tree index analyzer and relational query execution engine.",
+                "tags": [
+                  "C++",
+                  "Database Systems"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "timeline",
+            "title": "Education, Degree Milestones & Honors",
+            "events": [
+              {
+                "title": "B.S. in Computer Science - University of Science & Tech",
+                "date": "2022 - 2026 (Expected)",
+                "description": "Dean's Honor List, Specialization in Intelligent Systems & Architecture.",
+                "status": "current"
+              },
+              {
+                "title": "Undergraduate Research Assistant - AI Systems Lab",
+                "date": "2024 - Present",
+                "description": "Conducting benchmarks on deep learning model compression and quantization.",
+                "status": "current"
+              },
+              {
+                "title": "Lead Organizer - University Hackathon",
+                "date": "Fall 2024",
+                "description": "Coordinated 48-hour student hackathon with 350+ active participants.",
+                "status": "completed"
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "title": "Academic Inquiries & Collaboration",
+            "fields": [
+              {
+                "name": "contactName",
+                "label": "Full Name",
+                "fieldType": "text",
+                "placeholder": "e.g. Dr. Arthur Miller"
+              },
+              {
+                "name": "email",
+                "label": "Email Address",
+                "fieldType": "email",
+                "placeholder": "miller@university.edu"
+              },
+              {
+                "name": "inquiryType",
+                "label": "Inquiry Type",
+                "fieldType": "select",
+                "options": [
+                  "Research Opportunity",
+                  "Internship / Employment",
+                  "Academic Collaboration",
+                  "General Inquiry"
+                ]
+              },
+              {
+                "name": "message",
+                "label": "Message / Academic Proposal",
+                "fieldType": "textarea",
+                "placeholder": "Discuss research collaboration, project review, or opportunities..."
+              }
+            ]
+          },
+          {
+            "type": "chart",
+            "title": "pie chart Overview",
+            "chartType": "pie",
+            "labels": [
+              "Food & Dining",
+              "Transport",
+              "Utilities",
+              "Cloud & Tools",
+              "Shopping",
+              "Health"
+            ],
+            "datasets": [
+              {
+                "label": "Spending / Distribution",
+                "data": [
+                  850,
+                  420,
+                  310,
+                  680,
+                  520,
+                  240
+                ],
+                "backgroundColor": "#6366f1"
+              }
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-08-07T21:55:15.634Z",
+      "updatedAt": "2026-08-07T21:55:15.634Z"
+    },
+    {
+      "id": "f8deee41-d3d0-4e6e-bbdb-76ba37a9f398",
+      "userId": "06b3a1c6-6b8c-45eb-8843-250c39b1a227",
+      "title": "Student & Academic Portfolio",
+      "description": "Academic background, research coursework, technical projects, publications, and education milestones",
+      "prompt": "create a student portfolio",
+      "uiSchema": {
+        "title": "Student & Academic Portfolio",
+        "description": "Academic background, research coursework, technical projects, publications, and education milestones",
+        "components": [
+          {
+            "type": "hero",
+            "title": "Computer Science & Engineering Scholar",
+            "subtitle": "Undergraduate researcher focused on algorithms, distributed computing, and machine learning systems.",
+            "actionText": "View Research Projects",
+            "icon": "🎓"
+          },
+          {
+            "type": "card",
+            "title": "Academic Background & Research Focus",
+            "content": "Dedicated student passionate about computer systems, artificial intelligence, and applied software engineering. Actively seeking internship opportunities and collaborative research initiatives.",
+            "icon": "📚"
+          },
+          {
+            "type": "progress",
+            "title": "Degree Progress & Core Academic Competencies",
+            "value": 88,
+            "label": "Data Structures, Systems Programming, Machine Learning & Algorithms"
+          },
+          {
+            "type": "grid",
+            "title": "Featured Academic & Capstone Projects",
+            "items": [
+              {
+                "title": "Distributed Consensus Simulator",
+                "description": "Raft consensus implementation with dynamic network partition visualization.",
+                "tags": [
+                  "Go",
+                  "Distributed Systems",
+                  "Academic"
+                ]
+              },
+              {
+                "title": "Neural Vision Classifier",
+                "description": "Lightweight convolutional model for real-time biomedical image segmentation.",
+                "tags": [
+                  "Python",
+                  "PyTorch",
+                  "Research"
+                ]
+              },
+              {
+                "title": "FlowForge UI Engine",
+                "description": "Declarative component layout renderer and domain schema compiler.",
+                "tags": [
+                  "TypeScript",
+                  "Next.js",
+                  "Open Source"
+                ]
+              },
+              {
+                "title": "Database Query Optimizer",
+                "description": "Cost-based B-tree index analyzer and relational query execution engine.",
+                "tags": [
+                  "C++",
+                  "Database Systems"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "timeline",
+            "title": "Education, Degree Milestones & Honors",
+            "events": [
+              {
+                "title": "B.S. in Computer Science - University of Science & Tech",
+                "date": "2022 - 2026 (Expected)",
+                "description": "Dean's Honor List, Specialization in Intelligent Systems & Architecture.",
+                "status": "current"
+              },
+              {
+                "title": "Undergraduate Research Assistant - AI Systems Lab",
+                "date": "2024 - Present",
+                "description": "Conducting benchmarks on deep learning model compression and quantization.",
+                "status": "current"
+              },
+              {
+                "title": "Lead Organizer - University Hackathon",
+                "date": "Fall 2024",
+                "description": "Coordinated 48-hour student hackathon with 350+ active participants.",
+                "status": "completed"
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "title": "Academic Inquiries & Collaboration",
+            "fields": [
+              {
+                "name": "contactName",
+                "label": "Full Name",
+                "fieldType": "text",
+                "placeholder": "e.g. Dr. Arthur Miller"
+              },
+              {
+                "name": "email",
+                "label": "Email Address",
+                "fieldType": "email",
+                "placeholder": "miller@university.edu"
+              },
+              {
+                "name": "inquiryType",
+                "label": "Inquiry Type",
+                "fieldType": "select",
+                "options": [
+                  "Research Opportunity",
+                  "Internship / Employment",
+                  "Academic Collaboration",
+                  "General Inquiry"
+                ]
+              },
+              {
+                "name": "message",
+                "label": "Message / Academic Proposal",
+                "fieldType": "textarea",
+                "placeholder": "Discuss research collaboration, project review, or opportunities..."
+              }
+            ]
+          },
+          {
+            "type": "chart",
+            "title": "pie chart Overview",
+            "chartType": "pie",
+            "labels": [
+              "Food & Dining",
+              "Transport",
+              "Utilities",
+              "Cloud & Tools",
+              "Shopping",
+              "Health"
+            ],
+            "datasets": [
+              {
+                "label": "Spending / Distribution",
+                "data": [
+                  850,
+                  420,
+                  310,
+                  680,
+                  520,
+                  240
+                ],
+                "backgroundColor": "#6366f1"
+              }
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-08-07T21:55:36.888Z",
+      "updatedAt": "2026-08-07T21:55:36.888Z"
+    }
+  ]
+}
