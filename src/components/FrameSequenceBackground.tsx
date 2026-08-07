@@ -5,6 +5,9 @@ const TOTAL_FRAMES = 240;
 const FRAME_PAD = 3;
 const TARGET_FPS = 30;
 const FRAME_INTERVAL = 1000 / TARGET_FPS;
+const INITIAL_PRELOAD_COUNT = 15; // Load initial 15 frames for instant playback
+const BATCH_SIZE = 5; // Progressive batch size to avoid triggering GitHub Pages rate limit
+const BATCH_DELAY_MS = 120; // Throttled batch interval
 
 export default function FrameSequenceBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -12,7 +15,7 @@ export default function FrameSequenceBackground() {
   const currentFrameRef = useRef<number>(0);
   const animationFrameIdRef = useRef<number | null>(null);
   const lastRenderTimeRef = useRef<number>(0);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [, setHasStarted] = useState(false);
 
   useEffect(() => {
     let isCancelled = false;
@@ -22,25 +25,45 @@ export default function FrameSequenceBackground() {
       ? "/FlowForgeAI"
       : "";
 
-    // Preload and cache all 240 sequential frames
+    // Create 240 Image placeholders
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
-      const frameNum = String(i).padStart(FRAME_PAD, "0");
-      img.src = `${prefix}/bg-frames/ezgif-frame-${frameNum}.jpg`;
-
-      // When the first frame is ready, trigger immediate first render
-      if (i === 1) {
-        img.onload = () => {
-          if (!isCancelled) {
-            setHasStarted(true);
-          }
-        };
-      }
-
       images.push(img);
     }
-
     imagesRef.current = images;
+
+    // Helper to load a specific frame
+    const loadFrame = (index: number) => {
+      if (index >= TOTAL_FRAMES || isCancelled) return;
+      const img = imagesRef.current[index];
+      if (img && !img.src) {
+        const frameNum = String(index + 1).padStart(FRAME_PAD, "0");
+        img.src = `${prefix}/bg-frames/ezgif-frame-${frameNum}.jpg`;
+        if (index === 0) {
+          img.onload = () => {
+            if (!isCancelled) setHasStarted(true);
+          };
+        }
+      }
+    };
+
+    // Step 1: Preload initial frames for instant start
+    for (let i = 0; i < INITIAL_PRELOAD_COUNT; i++) {
+      loadFrame(i);
+    }
+
+    // Step 2: Queue remaining frames in throttled batches to prevent GitHub Pages rate-limiting
+    let currentBatchIndex = INITIAL_PRELOAD_COUNT;
+    const batchInterval = setInterval(() => {
+      if (isCancelled || currentBatchIndex >= TOTAL_FRAMES) {
+        clearInterval(batchInterval);
+        return;
+      }
+      for (let b = 0; b < BATCH_SIZE && currentBatchIndex < TOTAL_FRAMES; b++) {
+        loadFrame(currentBatchIndex);
+        currentBatchIndex++;
+      }
+    }, BATCH_DELAY_MS);
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -60,7 +83,19 @@ export default function FrameSequenceBackground() {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
 
-      ctx.fillStyle = "#0f172a";
+      // Fill fallback background gradient
+      const grad = ctx.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        100,
+        canvas.width / 2,
+        canvas.height / 2,
+        canvas.width
+      );
+      grad.addColorStop(0, "#1e1b4b");
+      grad.addColorStop(0.5, "#0f172a");
+      grad.addColorStop(1, "#020617");
+      ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.imageSmoothingEnabled = true;
@@ -113,6 +148,7 @@ export default function FrameSequenceBackground() {
 
     return () => {
       isCancelled = true;
+      clearInterval(batchInterval);
       if (animationFrameIdRef.current) {
         cancelAnimationFrame(animationFrameIdRef.current);
       }
