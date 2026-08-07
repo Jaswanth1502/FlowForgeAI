@@ -3,7 +3,7 @@ import { workflows } from "@/db/schema";
 import { getCurrentUser } from "@/lib/session";
 import { eq, desc } from "drizzle-orm";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 export async function GET() {
   try {

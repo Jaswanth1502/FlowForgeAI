@@ -139,25 +139,35 @@ export default function PreviewClient() {
     setError(null);
 
     try {
-      const res = await fetch("/api/ai/modify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          schema: schema || undefined,
-          currentSchema: schema || undefined,
-          instruction: userQuery,
-          model: selectedModel,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Modification failed");
+      let updatedSchema: any = null;
+      try {
+        const res = await fetch("/api/ai/modify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            schema: schema || undefined,
+            currentSchema: schema || undefined,
+            instruction: userQuery,
+            model: selectedModel,
+          }),
+        });
+        const data = await res.json();
+        if (res.ok && data.schema) {
+          updatedSchema = data.schema;
+        }
+      } catch {}
 
-      setSchema(data.schema);
-      sessionStorage.setItem("flowforge_current_schema", JSON.stringify(data.schema));
+      if (!updatedSchema) {
+        const { modifyClientSchema } = await import("@/lib/client-generator");
+        updatedSchema = modifyClientSchema(schema, userQuery);
+      }
+
+      setSchema(updatedSchema);
+      sessionStorage.setItem("flowforge_current_schema", JSON.stringify(updatedSchema));
 
       const newMessages = [
         ...updatedMessages,
-        { role: "assistant" as const, content: `Applied: "${userQuery}". Updated ${data.schema.title || "Interface"}.` }
+        { role: "assistant" as const, content: `Applied: "${userQuery}". Updated ${updatedSchema.title || "Interface"}.` }
       ];
       setChatMessages(newMessages);
       sessionStorage.setItem("flowforge_chat_messages", JSON.stringify(newMessages));

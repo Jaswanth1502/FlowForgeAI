@@ -1,7 +1,13 @@
 import { db } from "@/db";
 import { workflows } from "@/db/schema";
 import { getCurrentUser } from "@/lib/session";
-import { eq, and } from "drizzle-orm";
+import { eq } from "drizzle-orm";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return [{ id: "demo" }];
+}
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {

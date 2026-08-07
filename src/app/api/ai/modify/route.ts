@@ -1,6 +1,8 @@
 import { modifyUISchema, modifyFallbackSchema } from "@/lib/ai";
 import { validateUISchema } from "@/lib/schema-validator";
 
+export const dynamic = "force-static";
+
 export async function POST(request: Request) {
   try {
     let body: any = null;

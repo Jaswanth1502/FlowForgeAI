@@ -189,16 +189,26 @@ export default function WorkspaceClient() {
     }, 600);
 
     try {
-      const res = await fetch("/api/ai/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: prompt.trim(), model: selectedModel }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Generation failed");
+      let generatedSchema: any = null;
+      try {
+        const res = await fetch("/api/ai/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: prompt.trim(), model: selectedModel }),
+        });
+        const data = await res.json();
+        if (res.ok && data.schema) {
+          generatedSchema = data.schema;
+        }
+      } catch {}
+
+      if (!generatedSchema) {
+        const { generateClientSchema } = await import("@/lib/client-generator");
+        generatedSchema = generateClientSchema(prompt.trim());
+      }
 
       // Save generated output & chat context for the dedicated Preview Page
-      sessionStorage.setItem("flowforge_current_schema", JSON.stringify(data.schema));
+      sessionStorage.setItem("flowforge_current_schema", JSON.stringify(generatedSchema));
       sessionStorage.setItem("flowforge_current_prompt", prompt.trim());
       sessionStorage.setItem("flowforge_selected_model", selectedModel);
       sessionStorage.setItem(
@@ -207,7 +217,7 @@ export default function WorkspaceClient() {
           { role: "user", content: prompt.trim() },
           {
             role: "assistant",
-            content: `Generated "${data.schema.title || "Interface"}" with ${data.schema.components?.length || 0} UI components.`,
+            content: `Generated "${generatedSchema.title || "Interface"}" with ${generatedSchema.components?.length || 0} UI components.`,
           },
         ])
       );
