@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/FlowForgeAI//_next/:path+",
+        "destination": "/FlowForgeAI/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
