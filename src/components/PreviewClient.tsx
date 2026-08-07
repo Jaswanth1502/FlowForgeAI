@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import UIRenderer from "./UIRenderer";
 import { downloadDirectPDF } from "@/lib/pdf-generator";
 import FlowForgeLogo from "./FlowForgeLogo";
@@ -243,10 +244,10 @@ export default function PreviewClient() {
         <div className="sidebar-top">
           {/* Bar 1: Logo */}
           <div className="sidebar-logo-bar">
-            <a href="/" className="sidebar-logo" title="FlowForge AI">
+            <Link href="/" className="sidebar-logo" title="FlowForge AI">
               <FlowForgeLogo size={24} />
               <span className="logo-text">FlowForge<span className="logo-ai">AI</span></span>
-            </a>
+            </Link>
           </div>
 
           {/* Bar 2: Collapse & Shift Toggle */}
@@ -264,34 +265,34 @@ export default function PreviewClient() {
 
           {/* Navigation Items */}
           <nav className="sidebar-nav">
-            <a
+            <Link
               href="/workspace"
               className="sidebar-item"
               title="New Workflow"
             >
               <span className="sidebar-item-icon">✦</span>
               <span className="sidebar-item-text">New Workflow</span>
-            </a>
-            <a href="/workflows" className="sidebar-item" title="My Workflows">
+            </Link>
+            <Link href="/workflows" className="sidebar-item" title="My Workflows">
               <span className="sidebar-item-icon">📁</span>
               <span className="sidebar-item-text">My Workflows</span>
-            </a>
-            <a href="/workspace" className="sidebar-item" title="Templates">
+            </Link>
+            <Link href="/workspace" className="sidebar-item" title="Templates">
               <span className="sidebar-item-icon">📋</span>
               <span className="sidebar-item-text">Templates</span>
-            </a>
-            <a href="/settings" className="sidebar-item" title="Settings">
+            </Link>
+            <Link href="/settings" className="sidebar-item" title="Settings">
               <span className="sidebar-item-icon">⚙️</span>
               <span className="sidebar-item-text">Settings</span>
-            </a>
+            </Link>
           </nav>
         </div>
 
         <div className="sidebar-bottom">
-          <a href="/" className="sidebar-back-home-btn" title="Back to Home">
+          <Link href="/" className="sidebar-back-home-btn" title="Back to Home">
             <span className="sidebar-item-icon">🏠</span>
             <span className="sidebar-item-text">Back to Home</span>
-          </a>
+          </Link>
           <div
             className="sidebar-user-card"
             onClick={() => setShowProfileModal(true)}

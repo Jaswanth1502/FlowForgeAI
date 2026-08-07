@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import UIRenderer from "./UIRenderer";
 import { examplePrompts } from "@/lib/templates";
 import { generateReactComponent, generateHTMLWebpage } from "@/lib/export-generators";
@@ -421,10 +422,10 @@ export default function WorkspaceClient() {
         <div className="sidebar-top">
           {/* Bar 1: Logo */}
           <div className="sidebar-logo-bar">
-            <a href="/" className="sidebar-logo" title="FlowForge AI">
+            <Link href="/" className="sidebar-logo" title="FlowForge AI">
               <FlowForgeLogo size={24} />
               <span className="logo-text">FlowForge<span className="logo-ai">AI</span></span>
-            </a>
+            </Link>
           </div>
 
           {/* Bar 2: Collapse & Shift Toggle */}
@@ -450,10 +451,10 @@ export default function WorkspaceClient() {
               <span className="sidebar-item-icon">✦</span>
               <span className="sidebar-item-text">New Workflow</span>
             </button>
-            <a href="/workflows" className="sidebar-item" title="My Workflows">
+            <Link href="/workflows" className="sidebar-item" title="My Workflows">
               <span className="sidebar-item-icon">📁</span>
               <span className="sidebar-item-text">My Workflows</span>
-            </a>
+            </Link>
             <button
               onClick={() => {
                 setPrompt("Create a student performance dashboard with marks, attendance, subject-wise performance chart, and upcoming exams");
@@ -465,18 +466,18 @@ export default function WorkspaceClient() {
               <span className="sidebar-item-icon">📋</span>
               <span className="sidebar-item-text">Templates</span>
             </button>
-            <a href="/settings" className="sidebar-item" title="Settings">
+            <Link href="/settings" className="sidebar-item" title="Settings">
               <span className="sidebar-item-icon">⚙️</span>
               <span className="sidebar-item-text">Settings</span>
-            </a>
+            </Link>
           </nav>
         </div>
 
         <div className="sidebar-bottom">
-          <a href="/" className="sidebar-back-home-btn" title="Back to Home">
+          <Link href="/" className="sidebar-back-home-btn" title="Back to Home">
             <span className="sidebar-item-icon">🏠</span>
             <span className="sidebar-item-text">Back to Home</span>
-          </a>
+          </Link>
           <div
             className="sidebar-user-card"
             onClick={() => setShowProfileModal(true)}
