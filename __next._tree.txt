@@ -1,3 +1,3 @@
-:HL["/FlowForgeAI/_next/static/chunks/08s1tjs8e16lr.css","style"]
+:HL["/FlowForgeAI/_next/static/chunks/122f.sbnkognw.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"nYyKAjQZcj0Xzu2o5d4Nc"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"PjyVpU-aJ2a1G9HRc1Bhf"}
