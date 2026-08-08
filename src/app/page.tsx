@@ -130,7 +130,7 @@ export default function LandingPage() {
         <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           {user ? (
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <span style={{ fontSize: "14px", color: "var(--text-secondary)" }}>
+              <span style={{ fontSize: "14px", color: "#f8fafc" }}>
                 👤 {user.name || user.email}
               </span>
               <button
@@ -159,9 +159,17 @@ export default function LandingPage() {
                 <span>🔑</span>
                 <span>Sign In</span>
               </button>
-              <Link href="/workspace" className="nav-cta">
+              <button
+                type="button"
+                onClick={() => {
+                  setAuthMode("login");
+                  setAuthError("");
+                  setShowAuthModal(true);
+                }}
+                className="nav-cta"
+              >
                 Launch App
-              </Link>
+              </button>
             </>
           )}
         </div>
@@ -177,21 +185,35 @@ export default function LandingPage() {
             customizable interfaces in seconds. No code. No templates. Just describe what you need.
           </p>
           <div className="hero-actions">
-            <Link href="/workspace" className="btn-primary">
-              ⚡ Create Your UI
-            </Link>
-            {!user && (
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthMode("login");
-                  setAuthError("");
-                  setShowAuthModal(true);
-                }}
-                className="btn-secondary"
-              >
-                🔑 Sign In
-              </button>
+            {user ? (
+              <Link href="/workspace" className="btn-primary">
+                ⚡ Create Your UI
+              </Link>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAuthMode("login");
+                    setAuthError("");
+                    setShowAuthModal(true);
+                  }}
+                  className="btn-primary"
+                >
+                  ⚡ Create Your UI
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAuthMode("login");
+                    setAuthError("");
+                    setShowAuthModal(true);
+                  }}
+                  className="btn-secondary"
+                >
+                  🔑 Sign In
+                </button>
+              </>
             )}
           </div>
         </div>
