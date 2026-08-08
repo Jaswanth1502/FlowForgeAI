@@ -105,25 +105,37 @@ export default function LandingPage() {
 
   const handleGoogleLogin = async () => {
     setAuthError("");
-    let fbUser: any = null;
     try {
       const { loginWithGoogle } = await import("@/lib/firebase");
       const cred = await loginWithGoogle();
-      fbUser = cred.user;
+      const fbUser = cred.user;
+      if (fbUser) {
+        const authenticatedUser = {
+          id: fbUser.uid,
+          email: fbUser.email || "google.user@flowforge.ai",
+          name: fbUser.displayName || fbUser.email?.split("@")[0] || "Google User",
+        };
+        completeLogin(authenticatedUser);
+        return;
+      }
     } catch (fbErr: any) {
-      console.warn("Firebase Google popup note:", fbErr?.message || fbErr);
+      console.warn("Firebase Google Auth notice:", fbErr?.code, fbErr?.message);
+      if (fbErr?.code === "auth/popup-closed-by-user" || fbErr?.code === "auth/cancelled-popup-request") {
+        setAuthError("Google Sign-In popup was closed before completing.");
+        return;
+      }
+      if (fbErr?.message && !fbErr.message.includes("failed to fetch")) {
+        setAuthError(fbErr.message);
+        return;
+      }
     }
 
+    // Secondary API route attempt
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          provider: "google",
-          email: fbUser?.email || undefined,
-          name: fbUser?.displayName || undefined,
-          firebaseUid: fbUser?.uid || undefined,
-        }),
+        body: JSON.stringify({ provider: "google" }),
       });
       const ct = res.headers.get("content-type");
       if (res.ok && ct && ct.includes("application/json")) {
@@ -133,12 +145,12 @@ export default function LandingPage() {
       }
     } catch {}
 
-    const fallbackUser = {
-      id: fbUser?.uid || "google-user-" + Date.now(),
-      email: fbUser?.email || "google.user@flowforge.ai",
-      name: fbUser?.displayName || "Google Developer",
-    };
-    completeLogin(fallbackUser);
+    // Fallback for static host
+    completeLogin({
+      id: "google-user-" + Date.now(),
+      email: "google.user@flowforge.ai",
+      name: "Google Developer",
+    });
   };
 
   const handleDemoLogin = async () => {
