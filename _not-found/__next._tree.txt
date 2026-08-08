@@ -1,2 +1,2 @@
-:HL["/FlowForgeAI/_next/static/chunks/0lq_ousztg.aj.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"jiDh42J-Me93GtVtguqP0"}
+:HL["/FlowForgeAI/_next/static/chunks/10fw~-ros7whh.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"o2HYMZTi3QuRmij_4L9ZI"}
