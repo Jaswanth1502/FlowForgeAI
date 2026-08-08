@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
 2:I[47257,["/FlowForgeAI/_next/static/chunks/01xlw8hd842-c.js","/FlowForgeAI/_next/static/chunks/0d3shmwh5_nmn.js"],"ClientPageRoot"]
-3:I[52683,["/FlowForgeAI/_next/static/chunks/01xlw8hd842-c.js","/FlowForgeAI/_next/static/chunks/0d3shmwh5_nmn.js","/FlowForgeAI/_next/static/chunks/0gz2jqpee98ma.js"],"default"]
+3:I[52683,["/FlowForgeAI/_next/static/chunks/01xlw8hd842-c.js","/FlowForgeAI/_next/static/chunks/0d3shmwh5_nmn.js","/FlowForgeAI/_next/static/chunks/0n0y5rpyc9pau.js"],"default"]
 6:I[97367,["/FlowForgeAI/_next/static/chunks/01xlw8hd842-c.js","/FlowForgeAI/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/FlowForgeAI/_next/static/chunks/0gz2jqpee98ma.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"CYaeDgKx6f-OHVfUzybyK"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/FlowForgeAI/_next/static/chunks/0n0y5rpyc9pau.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"HLpDPFUCqX-6H999dok44"}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
