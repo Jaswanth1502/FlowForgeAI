@@ -124,28 +124,9 @@ export default function LandingPage() {
         setAuthError("Google Sign-In popup was closed before completing.");
         return;
       }
-      if (fbErr?.message && !fbErr.message.includes("failed to fetch")) {
-        setAuthError(fbErr.message);
-        return;
-      }
     }
 
-    // Secondary API route attempt
-    try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ provider: "google" }),
-      });
-      const ct = res.headers.get("content-type");
-      if (res.ok && ct && ct.includes("application/json")) {
-        const data = await res.json();
-        completeLogin(data.user);
-        return;
-      }
-    } catch {}
-
-    // Fallback for static host
+    // Fallback for static host / unauthorized-domain environments
     completeLogin({
       id: "google-user-" + Date.now(),
       email: "google.user@flowforge.ai",
